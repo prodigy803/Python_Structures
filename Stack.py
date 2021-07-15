@@ -1,18 +1,19 @@
 class Node:
-    
+    # Here the Node class is the structure that holds the values and the intrinsic structure of the DS.
     def __init__(self, value = 0,):
         self.value = value
         self.next = None
         self.previous = None
 
 class Stack:
-
+    # The init class will contain the head and the tail.
     def __init__(self,length = 10):
         self.head = None
         self.tail = None
         self.length = length
         self.current_length = 0
 
+    # append adds an "node" to the end of the "Stack", which we will later
     def append(self,value=0):
         
         node = Node(value)
@@ -36,6 +37,8 @@ class Stack:
 
 
     def pop(self):
+        
+        # Return and remove the top or the tail of the stack:
 
         if self.current_length == 0:
             return "Stack is empty"
@@ -51,8 +54,14 @@ class Stack:
             return value_to_be_returned
 
     def peek(self):
+        
+        # Returns the tail or the top of the stack:
 
-        return self.tail.value
+        if self.current_length ==0:
+            return 'Stack is Empty'
+        else:
+
+            return self.tail.value
 
 
 stack1 = Stack()
