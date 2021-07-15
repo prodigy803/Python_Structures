@@ -13,7 +13,7 @@ class Stack:
         self.length = length
         self.current_length = 0
 
-    # append adds an "node" to the end of the "Stack", which we will later
+    # append adds an "node" to the end of the "Stack", which we will later modify to add other nodes
     def append(self,value=0):
         
         node = Node(value)
@@ -54,7 +54,7 @@ class Stack:
             return value_to_be_returned
 
     def peek(self):
-        
+
         # Returns the tail or the top of the stack:
 
         if self.current_length ==0:
