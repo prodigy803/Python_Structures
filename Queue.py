@@ -2,7 +2,6 @@
 
 class Node:
     # Here we create a simple Node class, which will act as the container structure for the "Queue"
-
     def __init__(self, value = 0):
         self.value = value
         
