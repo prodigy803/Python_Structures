@@ -14,6 +14,7 @@ class Stack:
         self.current_length = 0
 
     # append adds an "node" to the end of the "Stack", which we will later modify to add other nodes
+    
     def append(self,value=0):
         
         node = Node(value)
