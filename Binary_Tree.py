@@ -36,7 +36,7 @@ class Btree:
             
         return self.value
 
-btree = BTree(10)
+btree = Btree(10)
 btree.add_node(5)
 btree.add_node(100)
 btree.add_node(1)
