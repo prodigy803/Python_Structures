@@ -13,14 +13,14 @@ class Btree:
         else:
             if self.value > value:
                 if self.left == None:
-                    self.left = Node(value)
+                    self.left = Btree(value)
 
                 else:
                     self.left.add_node(value)
 
             elif self.value < value:
                 if self.right == None:
-                    self.right = Node(value)
+                    self.right = Btree(value)
                 
                 else:
                     self.right.add_node(value)
@@ -31,10 +31,20 @@ class Btree:
     def get_min(self):
 
         while self.left != None:
-            print(self.value)
+            # print(self.value)
             self = self.left
             
         return self.value
+
+    def inorder_traverse(self):
+        if self.left != None:
+            self.left.inorder_traverse()
+
+        print(self.value)
+
+        if self.right != None:
+            self.right.inorder_traverse()
+
 
 btree = Btree(10)
 btree.add_node(5)
@@ -49,4 +59,5 @@ btree.add_node(9)
 btree.add_node(3)
 btree.add_node(-1)
 
-print(btree.get_min())
+
+btree.inorder_traverse()
