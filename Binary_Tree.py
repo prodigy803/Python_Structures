@@ -1,4 +1,4 @@
-class Node:
+class Btree:
 
     def __init__(self, value = None):
         self.value = value
@@ -14,8 +14,8 @@ class Node:
             if self.value > value:
                 if self.left == None:
                     self.left = Node(value)
-                else:
 
+                else:
                     self.left.add_node(value)
 
             elif self.value < value:
@@ -36,7 +36,7 @@ class Node:
             
         return self.value
 
-btree = Node(10)
+btree = BTree(10)
 btree.add_node(5)
 btree.add_node(100)
 btree.add_node(1)
