@@ -17,26 +17,32 @@ class Trie:
 
         return ord(value.lower()) - ord('a')
 
+    def getNode():
+        return Node()
 
     def insert(self, value):
         
         ## essentially we are going to create a list of lists (like a organized nest of lists)
+        temp_node = self.root
+        len_of_word = len(value)
 
-        for i in range(len(value)):
+        for i in range(len_of_word):
             index = self.get_index_of_letter(value[i])
 
-            if self.root.nodes[index] == None:
-                self.root.nodes[index] = Node()
+            if temp_node.nodes[index] == None:
+                temp_node.nodes[index] = Node()
 
-            self.root = self.root.nodes[index]
+            temp_node = temp_node.nodes[index]
 
-        self.root.isEndOfWord = True
+        temp_node.isEndOfWord = True
+
 
     def search(self, value):
+        temp_node = self.root
+        len_of_word = len(value)
 
-        for i in range(len(value)):
+        for i in range(len_of_word):
             index = self.get_index_of_letter(value[i])
-            temp_node = self.root
 
             if temp_node.nodes[index] == None:
                 return False
@@ -47,12 +53,10 @@ class Trie:
 
 trie = Trie()
 
-trie.insert('glasses')
-trie.insert('glass')
-trie.insert('chashma')
+trie.insert(value = 'glasses')
+trie.insert(value = 'glass')
+trie.insert(value = 'chashma')
 
-# trie.get_root()
-
-print(trie.search('gla'))
+print(trie.search('glas'))
 
 
